@@ -43,11 +43,11 @@ public class ReadFileWithFixedSizeBuffer
         long fileSize = aFile.length();
         long chunkSize =  fileSize / nThread;
         HashMap<Integer,ArrayList<Long>> map = new HashMap<Integer,ArrayList<Long>>();
-       
+      
         SearchString searchString = new SearchString(map, aFile, nThread, chunkSize, fileSize, searchkey.trim());
         System.out.println(searchkey.length());
-        ExecutorService executor = Executors.newFixedThreadPool(5);
-        for (int i = 0; i < 5; i++) {
+        ExecutorService executor = Executors.newFixedThreadPool(nThread);
+        for (int i = 0; i < nThread; i++) {
         	Thread worker = new Thread(searchString,""+i); 
             executor.execute(worker);
             
