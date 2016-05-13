@@ -61,7 +61,7 @@ public class KMPSearch {
 		lps[0] = 0; // lps[0] is always 0
 		i = 1;
 
-		// the loop calculates lps[i] for i = 1 to M-1
+		
 		while (i < M)
 		{
 		if (pat[i] == pat[len])
@@ -74,11 +74,10 @@ public class KMPSearch {
 		{
 			if (len != 0)
 			{
-			// This is tricky. Consider the example 
-			// AAACAAAA and i = 7.
+			
 			len = lps[len-1];
 
-			// Also, note that we do not increment i here
+			
 			}
 			else // if (len == 0)
 			{
