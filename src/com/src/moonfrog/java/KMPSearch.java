@@ -8,7 +8,7 @@ public class KMPSearch {
 	public static  List<Long>  KMPSearch(String pat, String txt)
 	{
 		List<Long> index = new ArrayList<Long>();
-		System.out.println("pat :"+pat + " , data" +txt);
+		
 		char[] pa = pat.toCharArray();
 		char[] tx = txt.toCharArray();
 		
